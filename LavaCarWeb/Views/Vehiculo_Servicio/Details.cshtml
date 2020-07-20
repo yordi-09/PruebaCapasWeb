@@ -1,0 +1,41 @@
+﻿@model Entidad.Vehiculo_Servicio
+
+@{
+    ViewBag.Title = "Detalles de servicio por vehiculo";
+}
+
+<h2>Detalles de servicio por vehiculo</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_Vehiculo_Servicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Vehiculo_Servicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_Servicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Servicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_Vehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Vehiculo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID_Vehiculo_Servicio }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

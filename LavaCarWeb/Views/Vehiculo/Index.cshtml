@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Entidad.Vehiculo>
+
+@{
+    ViewBag.Title = "Vehículos";
+}
+<br />
+<h2>Vehículos</h2>
+
+<p>
+    @Html.ActionLink("Agregar vehículo", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ID_Vehiculo)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Placa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dueño)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ID_Vehiculo)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Placa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dueño)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marca)
+        </td>
+        <td>
+            <a class="btn btn-primary btn-xs" title="Editar" href="@Url.Action("Edit", "Vehiculo", new { id = item.ID_Vehiculo })">
+                <i class="glyphicon glyphicon-pencil"></i>
+            </a>
+            <a class="btn btn-info btn-xs" title="Detalles" href="@Url.Action("Details", "Vehiculo", new { id = item.ID_Vehiculo })">
+                <i class="glyphicon glyphicon-eye-open"></i>
+            </a>
+            @*@Html.ActionLink("Delete", "Delete", new { id = item.ID_Vehiculo })*@
+        </td>
+    </tr>
+}
+
+</table>

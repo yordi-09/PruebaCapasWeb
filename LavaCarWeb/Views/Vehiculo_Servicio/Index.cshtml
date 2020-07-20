@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Entidad.Vehiculo_Servicio>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h2>Servicios por Vehículo</h2>
+
+<p>
+    @Html.ActionLink("Servicio por vehiculo", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ID_Vehiculo_Servicio)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Servicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Vehiculo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ID_Vehiculo_Servicio)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Servicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Vehiculo)
+        </td>
+        <td>
+            <a class="btn btn-primary btn-xs" title="Editar" href="@Url.Action("Edit", "Vehiculo_Servicio", new { id = item.ID_Vehiculo_Servicio })">
+                <i class="glyphicon glyphicon-pencil"></i>
+            </a>
+            <a class="btn btn-info btn-xs" title="Detalles" href="@Url.Action("Details", "Vehiculo_Servicio", new { id = item.ID_Vehiculo_Servicio })">
+                <i class="glyphicon glyphicon-eye-open"></i>
+            </a>
+
+       </td>
+    </tr>
+}
+
+</table>
